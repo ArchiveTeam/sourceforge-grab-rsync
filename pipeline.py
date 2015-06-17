@@ -58,7 +58,7 @@ else:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20150617.06"
+VERSION = "20150617.07"
 USER_AGENT = 'ArchiveTeam'
 TRACKER_ID = 'sourceforgersync'
 TRACKER_HOST = 'tracker.archiveteam.org'
@@ -219,7 +219,7 @@ pipeline = Pipeline(
 	CheckIP(),
 	GetItemFromTracker("http://%s/%s" % (TRACKER_HOST, TRACKER_ID), downloader, VERSION),
 	ExternalProcess("Size Test",[RSYNC_TEST,"-t",getRsyncURL("foo"),"-m",MAX_RSYNC]),
-	LimitConcurrent(1,ExternalProcess("rsync", ["rsync", "-av", getRsyncURL("foo"), cleanItem("%(data_dir)s/%(item_name)s")])),
+	LimitConcurrent(1,ExternalProcess("rsync", ["rsync", "--progress", "-av", getRsyncURL("foo"), cleanItem("%(data_dir)s/%(item_name)s")])),
 	ExternalProcess("tar", ["tar", "-czf", cleanItem("%(data_dir)s/%(item_name)s.tar.gz"), "-C", ItemInterpolation("%(data_dir)s/"), "--owner=1999", "--group=2015", "--no-same-permissions", cleanItem("%(item_name)s")]),
 	LimitConcurrent(NumberConfigValue(min=1, max=4, default="1",
 		name="shared:rsync_threads", title="Rsync threads",

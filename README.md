@@ -59,7 +59,7 @@ Distribution-specific setup
     adduser --system --group --shell /bin/bash archiveteam
     apt-get install -y git-core libgnutls-dev screen python-dev python-pip bzip2 zlib1g-dev rsync
     pip install seesaw
-    su -c "cd /home/archiveteam; git clone https://github.com/chpwssn/sourceforge-grab-rsync.git; cd sourceforge-grab-rsync;" archiveteam
+    su -c "cd /home/archiveteam; git clone https://github.com/ArchiveTeam/sourceforge-grab-rsync.git; cd sourceforge-grab-rsync;" archiveteam
     screen su -c "cd /home/archiveteam/sourceforge-grab-rsync/; run-pipeline pipeline.py --concurrent 1 --address '127.0.0.1' YOURNICKHERE" archiveteam
     [... ctrl+A D to detach ...]
 

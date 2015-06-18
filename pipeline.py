@@ -49,8 +49,10 @@ RSYNC_TEST = find_executable(
 #Using Gigabytes not Gibibytes to be safe
 if os.path.isfile("LARGE-RSYNC"):
 	MAX_RSYNC = "150000000000"
+elif os.path.isfile("MEDIUM-RSYNC"):
+    MAX_RSYNC = "25000000000"
 else:
-	MAX_RSYNC = "25000000000"
+	MAX_RSYNC = "5000000000"
 
 
 ###########################################################################
@@ -58,7 +60,7 @@ else:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20150617.07"
+VERSION = "20150617.08"
 USER_AGENT = 'ArchiveTeam'
 TRACKER_ID = 'sourceforgersync'
 TRACKER_HOST = 'tracker.archiveteam.org'

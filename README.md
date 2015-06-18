@@ -40,6 +40,20 @@ If you don't have root access and/or your version of pip is very old, you can re
 so that pip and seesaw are installed in your home, then run
 
     ~/.local/bin/run-pipeline pipeline.py --concurrent 1 YOURNICKHERE
+    
+Running with lots of disk space
+--------------------------------
+If you have a lot of disk space please consider running in `large-rsync` or `medium-rsync` mode. Medium mode (75 GB free recommended) allows your pipeline to download repositories up to 25 GB and large mode (300 GB free recommended) allows your pipeline to download repositories up to 150 GB. The default pipeline will not download repositories larger than 5GB.
+
+Your pipeline will have an uncompressed copy and a compressed copy of the repository on disk at the same time for each count of concurrency, thus using approximately two times the repository size in disk space.
+
+To enable `medium-rsync` mode `cd` into the `sourceforge-grab-rsync` directory and run the command:
+
+	touch MEDIUM-RSYNC
+
+To enable `large-rsync` mode `cd` into the `sourceforge-grab-rsync` directory and run the command:
+
+	touch LARGE-RSYNC
 
 Running multiple instances on different IPs
 -------------------------------------------

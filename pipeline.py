@@ -62,7 +62,7 @@ else:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20150618.01"
+VERSION = "20150618.02"
 USER_AGENT = 'ArchiveTeam'
 TRACKER_ID = 'sourceforgersync'
 TRACKER_HOST = 'tracker.archiveteam.org'
@@ -214,7 +214,7 @@ project = Project(
 	title="sourceforgersync",
 	project_html="""
 		<img class="project-logo" alt="Project logo" src="http://a.fsdn.com/con/img/sftheme/logo.png" height="50px" title=""/>
-		<h2>sourceforge.net <span class="links"><a href="http://sourceforge.net/">Website</a> &middot; <a href="http://tracker.archiveteam.org/sourceforge/">Leaderboard</a></span></h2>
+		<h2>sourceforge.net <span class="links"><a href="http://sourceforge.net/">Website</a> &middot; <a href="http://tracker.archiveteam.org/sourceforgersync/">Leaderboard</a></span></h2>
 		<p>Saving all project from SourceForge. rsyncing all of the source code repositories.</p>
 	"""
 )

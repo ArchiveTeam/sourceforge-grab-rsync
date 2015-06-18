@@ -50,7 +50,7 @@ RSYNC_TEST = find_executable(
 if os.path.isfile("LARGE-RSYNC"):
 	MAX_RSYNC = "150000000000"
 elif os.path.isfile("MEDIUM-RSYNC"):
-    MAX_RSYNC = "25000000000"
+	MAX_RSYNC = "25000000000"
 else:
 	MAX_RSYNC = "5000000000"
 

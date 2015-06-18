@@ -49,8 +49,10 @@ RSYNC_TEST = find_executable(
 #Using Gigabytes not Gibibytes to be safe
 if os.path.isfile("LARGE-RSYNC"):
 	MAX_RSYNC = "150000000000"
+	print("Large mode enabled! You will not reject items up to ",MAX_RSYNC," bytes.")
 elif os.path.isfile("MEDIUM-RSYNC"):
 	MAX_RSYNC = "25000000000"
+	print("Medium mode enabled! You will not reject items up to ",MAX_RSYNC," bytes.")
 else:
 	MAX_RSYNC = "5000000000"
 
@@ -60,7 +62,7 @@ else:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = "20150617.09"
+VERSION = "20150618.01"
 USER_AGENT = 'ArchiveTeam'
 TRACKER_ID = 'sourceforgersync'
 TRACKER_HOST = 'tracker.archiveteam.org'
@@ -211,7 +213,7 @@ def stats_id_function(item):
 project = Project(
 	title="sourceforgersync",
 	project_html="""
-		<img class="project-logo" alt="Project logo" src="" height="50px" title=""/>
+		<img class="project-logo" alt="Project logo" src="http://a.fsdn.com/con/img/sftheme/logo.png" height="50px" title=""/>
 		<h2>sourceforge.net <span class="links"><a href="http://sourceforge.net/">Website</a> &middot; <a href="http://tracker.archiveteam.org/sourceforge/">Leaderboard</a></span></h2>
 		<p>Saving all project from SourceForge. rsyncing all of the source code repositories.</p>
 	"""
